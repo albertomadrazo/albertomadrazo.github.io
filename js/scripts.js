@@ -15,8 +15,9 @@ $(document).ready(function(){
 
 		toggleVisibility('.submenu');
 	});
-
+	alert($(window).width());
 	$(window).resize(function(){
+
 		console.log($(this).width());
 		if($(window).width() < 550){
 			$('#main-menu').css('position', 'relative');
@@ -28,7 +29,7 @@ $(document).ready(function(){
 	});
 
 	$(window).scroll(function(){
-		
+
 		console.log($(this).scrollTop());
 		if(resize === false){
 			console.log("no resize");
