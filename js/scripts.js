@@ -16,26 +16,33 @@ $(document).ready(function(){
 		toggleVisibility('.submenu');
 	});
 
-	if($(window).width() < 550){
-		resize = false;
-	}
-	else if ($(window).width() > 551){
-		resize = true;
-	}
+	$(window).resize(function(){
+		console.log($(this).width());
+		if($(window).width() < 550){
+			$('#main-menu').css('position', 'relative');
+			resize = false;
+		}
+		else if ($(window).width() >= 551){
+			resize = true;
+		}
+	});
 
 	$(window).scroll(function(){
+		
+		console.log($(this).scrollTop());
 		if(resize === false){
+			console.log("no resize");
 			return;
 		}
 		console.log($(window).width());
 
-		if($(this).scrollTop() > 200){
-			$('#main-menu-container').css({position: 'fixed', top: '0'});
+		if($(this).scrollTop() > 145){
+			$('#main-menu').css({position: 'fixed', top: '0'});
 			lockedMenu = true;
 		}		
 
-		if($(this).scrollTop() < 200 && lockedMenu === true){
-			$('#main-menu-container').css({position: 'relative', top:'53px'});
+		if($(this).scrollTop() < 145 && lockedMenu === true){
+			$('#main-menu').css({position: 'relative', top:'20px'});
 
 			lockedMenu = false;
 		}

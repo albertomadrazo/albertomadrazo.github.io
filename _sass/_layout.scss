@@ -74,7 +74,7 @@ body{
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    border: 10px solid white;
+    // border: 10px solid white;
 }
 #name{
     display: inline-block;
@@ -94,7 +94,7 @@ body{
     background-color: $header;
     width: 100%;
     margin: 0 auto;
-    height: 300px;
+    height: 245px;
 }
 
 #slogan{
@@ -104,26 +104,26 @@ body{
 }
 
 #main-menu{
-    background-color: rgba(0,0,0,0);
+    background-color: $header;
+    // background-color: rgba(0,0,0,0);
     // background-color: $header;
     height: 100px;
     font-size: 1.5em;
     text-align: center;
     position: relative;
-    top: 80px;
+    top: 20px;
     width: 100%;
-    border: 1px solid red;
+    // border: 1px solid red;
 }
 
 #main-menu li{
-    color: white;
     margin-right: 40px;
     display: inline;
     vertical-align: bottom;
 }
 
 #main-menu a{
-    color: white;
+    color: red;
 }
 
 #main-menu ul{
@@ -221,40 +221,30 @@ footer p{
 
 @media only screen and(max-width:530px){
     #site-header{
-        height: 200px;
-        background-color: yellow;
+        height: 173px;
+        background-color: $header;
         text-align: center;
     }
-    #name{
-        position: absolute;
-        // top: 25px;
-        left: 60px;
-        background-color: purple;
-    }
-    #main-menu{
-        font-size: 1.5em;
-        text-align: center;
-        width: 100%;
-        background-color: rgba(0,0,0,0);
-        top: -26px;        
-        height: 99px;   
-        border: 1px solid red;
-    }
-    #site-header h1{
+    #name h1{
+        left: 20px;
         margin: 0 auto;
         font-size: 2.7em;
     }
+    #main-menu{
+        font-size: 1.5em;
+        width: 100%;    
+        background-color: rgba(0,0,0,0);
+        top: -2px;        
+        height: 97px;   
+    }
     #main-logo{
-        visibility: hidden;
+        display: none;
     }
     .content-left, .content-right{ 
         width:100%;
     }
 
     #main-menu ul{
-        // top: 40px;
-        // margin: 0 auto;
-        // position: relative;
         width: 100%;
     }
     #main-menu li{
