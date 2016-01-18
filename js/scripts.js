@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 		toggleVisibility('.submenu');
 	});
-	alert($(window).width());
+	// alert($(window).width());
 	$(window).resize(function(){
 
 		console.log($(this).width());

@@ -123,17 +123,16 @@ body{
 }
 
 #main-menu a{
-    color: red;
+    color: white;
 }
 
 #main-menu ul{
     top: 78px;
-    // margin: 0 auto;
     position: relative;
     width: 100%;
 }
 #menu-portafolio{
-    position: relative;
+    // position: relative;
 }
 
 .arrow-down{
@@ -218,54 +217,84 @@ footer p{
 }
 
 
+/* =========================================== 
+    MediaQuery-Reporter Styles
+   =========================================== */
 
-@media only screen and(max-width:530px){
+@media only screen and(max-width:480px){
     #site-header{
         height: 173px;
         background-color: $header;
         text-align: center;
     }
+
+    #name{
+        position:relative;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    #main-logo{
+        display: none;
+    }
+
     #name h1{
+        font-size: 2.0em;
         left: 20px;
         margin: 0 auto;
         font-size: 2.7em;
     }
     #main-menu{
-        font-size: 1.5em;
-        width: 100%;    
-        background-color: rgba(0,0,0,0);
-        top: -2px;        
-        height: 97px;   
-    }
-    #main-logo{
-        display: none;
-    }
-    .content-left, .content-right{ 
-        width:100%;
-    }
+        padding: 0;
+        margin: 0;
+        // border: 1px solid red;
+        text-align: left;
 
+    }
     #main-menu ul{
-        width: 100%;
+        // border: 1px solid red;
+        position: relative;
+        top: 20px;
+        padding: 0;
+        margin: 0;
+        margin-left: 15px;
     }
     #main-menu li{
-        padding-left: 10px;
+        padding: 0;
+        margin: 0;
+        display: block;
+        font-size: 1.0em;
+        margin-right: 35px;
         color: white;
-        margin-right: 10px;
-        display: inline;
-        vertical-align: bottom;
+        // border: 1px solid red;
     }
-    #content{
-        width: 90%;
-        // min-height: 600px;
-        // margin: 40px auto;
-    
+    #main-menu a{
+        color: white;
+    }
+    .contact{
+        visibility: hidden;
+    }
+
+    ul{
+        list-style-type: disc;
+        list-style-position: inside;
     }
 }
-
 
 /* =========================================== 
     MediaQuery-Reporter Styles
    =========================================== */
+
+
+@media only screen and(max-width:530px){
+    .content-left, .content-right{ 
+        width:100%;
+    }
+    #content{
+        width: 90%;
+    }
+}
+
 
 body:after{
     content: "less than 320px";
