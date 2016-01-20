@@ -121,11 +121,11 @@ body{
 }
 
 #main-menu a{
-    color: white;
+    color: #fff;
 }
 
 #main-menu ul{
-    top: 78px;
+    top: 50px;
     position: relative;
     width: 100%;
 }
@@ -146,8 +146,6 @@ a{
 
 }
 
-.content-left{
-
 #container{
     width: 90%;
     background-color: #f7941d;
@@ -155,12 +153,14 @@ a{
     margin: 0 auto;
     margin-top: 10px;
 }
+
+.content-left{
     float: left;
     width: 70%;
 }
 
 .content-right{
-    float: left;
+    float: right;
     width: 30%;
 }
 
@@ -303,6 +303,26 @@ footer p{
         border-right: $arrow-size solid transparent;
         border-bottom: $arrow-size solid #fff;
     }
+
+    .content-left, .content-right{
+        display: block;
+        // background-color: red;
+        // float: none;
+        width: 100%;
+    }
+    
+    .content-left{
+        margin-top: 30px;
+        // background-color: #f7941d;
+        
+    }
+    #content{
+        width: 95%;
+        min-height: 600px;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
 }
 
 /* =========================================== 

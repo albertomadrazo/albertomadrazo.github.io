@@ -10,10 +10,15 @@ function toggleVisibility(element){
 $(document).ready(function(){
 	var lockedMenu = false;
 	var resize = true;
-
+ 
 	$('.arrow-down').css({visibility: 'visible'});
 
 	$('#main-menu, .arrow-down').on('click', function(event){
+		if($(window).width() > 500){
+			console.log("Que pinche desmadre");
+			return;
+		}
+
 		event.preventDefault();
 			$(this).find('.arrow-up').css({display: 'static'});
 		$('#main-menu').animate({height: '135px'}, 300, function(){
@@ -52,28 +57,27 @@ $(document).ready(function(){
 		else if ($(window).width() >= 551){
 			resize = true;
 		}
+		var preexistent_margin = $('#content').css('margin-top');
+
 	});
 
+	var preexistent_margin = $('#content').css('margin-top');
 
 	$(window).scroll(function(){
+
 		var screen_height = 0;
 		var content_margin = 0;
 		if($(window).width() < 480){
 			screen_height = 100;
-			content_margin_top = '141px';
 		}
 		else if($(window).width() > 480){
 			screen_height = 150;
-			content_margin_top = '142px';
 		}
-
-		if($(this).scrollTop() > screen_height){
-		console.log("scrollTop > 150");
+		if($(this).scrollTop() > screen_height){			
 			$('#main-menu').css({position: 'fixed', top: '0'});
-			$('#content').css({'margin-top': content_margin_top});
+			var main_menu_height = parseInt($('#main-menu').height()) + parseInt(preexistent_margin);// + preexistent_margin;//preexistent_margin;
+			$('#content').css({'margin-top': main_menu_height});
 			lockedMenu = true;
-			console.log(lockedMenu);
-			console.log($(this).scrollTop());
 		}		
 
 		if($(this).scrollTop() < screen_height && lockedMenu === true){
@@ -85,10 +89,6 @@ $(document).ready(function(){
 			console.log($(this).scrollTop());
 		}
 	});
-
-	$('#site-header').on('click', function(){
-		$('#main-menu').css('top', '0');
-	})
 
 });
 
