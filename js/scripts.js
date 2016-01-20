@@ -11,16 +11,42 @@ $(document).ready(function(){
 	var lockedMenu = false;
 	var resize = true;
 
-	$('#menu-portafolio').on('click', function(){
+	$('.arrow-down').css({visibility: 'visible'});
 
+	$('#main-menu, .arrow-down').on('click', function(event){
+		event.preventDefault();
+			$(this).find('.arrow-up').css({display: 'static'});
+		$('#main-menu').animate({height: '135px'}, 300, function(){
+			$(this).find('ul').css({visibility: 'visible', top: '-10px'});
+			$(this).find('.arrow-down').css({visibility: 'hidden'});
+		});
+
+	});
+
+	$('.collapse-menu, .arrow-up').on('click', function(event){
+
+		$('#main-menu').find('ul').css({top: '3px'});
+		// $('#main-menu > ul').find('.arrow-down').css({display: 'static', visibility: 'visible', 'background-color': 'black'});
+		event.preventDefault();
+		event.stopPropagation();
+		$('#main-menu').find('ul').css({visibility: 'hidden'});
+		$('#main-menu').animate({height: '23px'}, 200, function(){
+			console.log("All right!");
+		});
+			
+		$('.arrow-down').css({visibility: 'visible'});
+
+	})
+
+
+	$('#menu-portafolio').on('click', function(){
 		toggleVisibility('.submenu');
 	});
 	// alert($(window).width());
 	$(window).resize(function(){
-
 		console.log($(this).width());
 		if($(window).width() < 550){
-			$('#main-menu').css('position', 'relative');
+			$('#main-menu').css('position', 'static');
 			resize = false;
 		}
 		else if ($(window).width() >= 551){
@@ -28,25 +54,41 @@ $(document).ready(function(){
 		}
 	});
 
+
 	$(window).scroll(function(){
-
-		console.log($(this).scrollTop());
-		if(resize === false){
-			console.log("no resize");
-			return;
+		var screen_height = 0;
+		var content_margin = 0;
+		if($(window).width() < 480){
+			screen_height = 100;
+			content_margin_top = '141px';
 		}
-		console.log($(window).width());
+		else if($(window).width() > 480){
+			screen_height = 150;
+			content_margin_top = '142px';
+		}
 
-		if($(this).scrollTop() > 145){
+		if($(this).scrollTop() > screen_height){
+		console.log("scrollTop > 150");
 			$('#main-menu').css({position: 'fixed', top: '0'});
+			$('#content').css({'margin-top': content_margin_top});
 			lockedMenu = true;
+			console.log(lockedMenu);
+			console.log($(this).scrollTop());
 		}		
 
-		if($(this).scrollTop() < 145 && lockedMenu === true){
-			$('#main-menu').css({position: 'relative', top:'20px'});
-
+		if($(this).scrollTop() < screen_height && lockedMenu === true){
+			$('#main-menu').css('position', 'relative');
+			$('#content').css({'margin-top': '0'});
+			console.log("scrollTop < 150");
 			lockedMenu = false;
+			console.log(lockedMenu);
+			console.log($(this).scrollTop());
 		}
 	});
+
+	$('#site-header').on('click', function(){
+		$('#main-menu').css('top', '0');
+	})
+
 });
 
