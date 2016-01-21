@@ -1,0 +1,28 @@
+---
+layout: default
+title: contacto
+permalink: /contacto/
+---
+<div id="content">
+<h3>Escr&iacute;beme</h3>
+<div id="form">
+	<form id="contactform" method="POST">
+		Nombre<br />
+		<input type="text" name="name" class="text-field" id="sender-name" /><br />
+		Email<br />
+		<input type="email" name="_replyto" class="text-field email-field" /><br />
+		Mensaje<br />
+		<textarea name="message"></textarea><br />
+		<input type="submit" value="Enviar" />
+		<input type="hidden" name="_subject" value="ALBERTOMADRAZO.COM" />
+		<input type="hidden" name="_next" value="index.html?email_sent=true" />
+		<input type="text" name="_gotcha" style="display:none" />	
+
+	</form>
+</div>
+<script type="text/javascript">
+	var contactform = document.getElementById('contactform');
+	contactform.setAttribute('action', '//formspree.io/' + 'betomadrazo' + '@' + 'gmail' + '.' + 'com');
+</script>
+
+</div>
