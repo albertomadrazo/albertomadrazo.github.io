@@ -10,7 +10,6 @@ function toggleVisibility(element){
 $(document).ready(function(){
 	var lockedMenu = false;
 	var resize = true;
- 	$('a').on('click', alert("Yeah"));
 	$('.arrow-down').css({visibility: 'visible'});
 
 	$('#main-menu, .arrow-down').on('click', function(event){
