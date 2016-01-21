@@ -10,7 +10,7 @@ function toggleVisibility(element){
 $(document).ready(function(){
 	var lockedMenu = false;
 	var resize = true;
- 
+ 	$('a').on('click', alert("Yeah"));
 	$('.arrow-down').css({visibility: 'visible'});
 
 	$('#main-menu, .arrow-down').on('click', function(event){
@@ -18,8 +18,7 @@ $(document).ready(function(){
 			console.log("Que pinche desmadre");
 			return;
 		}
-
-		event.preventDefault();
+		// event.preventDefault(); // Why this???
 			$(this).find('.arrow-up').css({display: 'static'});
 		$('#main-menu').animate({height: '135px'}, 300, function(){
 			$(this).find('ul').css({visibility: 'visible', top: '-10px'});
