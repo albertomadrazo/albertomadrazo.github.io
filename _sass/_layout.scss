@@ -354,19 +354,26 @@ h4{
     }
     
     .content-left{
-        margin-top: 30px;
+        // margin-top: 30px;
         // background-color: #f7941d;
         
     }
     #content{
         width: 95%;
-        min-height: 600px;
-        margin: 0 auto;
+        // min-height: 600px;
+        // margin: 0 auto;
         margin-top: 10px;
     }
 
+
 }
 
+.proyecto{
+    overflow: hidden;
+    width: 95%;
+    margin-top: 10px;
+    margin-bottom: 80px;
+}
 /* =========================================== 
     MediaQuery-Reporter Styles
    =========================================== */
