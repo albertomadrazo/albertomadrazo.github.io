@@ -14,12 +14,10 @@ $(document).ready(function(){
 
 	$('#main-menu, .arrow-down').on('click', function(event){
 		if($(window).width() > 500){
-			console.log("Que pinche desmadre");
 			return;
 		}
-		// event.preventDefault(); // Why this???
 			$(this).find('.arrow-up').css({display: 'static'});
-		$('#main-menu').animate({height: '135px'}, 300, function(){
+			$('#main-menu').animate({height: '135px'}, 300, function(){
 			$(this).find('ul').css({visibility: 'visible', top: '-10px'});
 			$(this).find('.arrow-down').css({visibility: 'hidden'});
 		});
@@ -72,7 +70,7 @@ $(document).ready(function(){
 			screen_height = 150;
 		}
 		if($(this).scrollTop() > screen_height){			
-			$('#main-menu').css({position: 'fixed', top: '0'});
+			$('#main-menu').css({position: 'fixed', top: '0', 'margin-left': '10%'});
 			var main_menu_height = parseInt($('#main-menu').height()) + parseInt(preexistent_margin);// + preexistent_margin;//preexistent_margin;
 			$('#content').css({'margin-top': main_menu_height});
 			lockedMenu = true;
@@ -80,7 +78,7 @@ $(document).ready(function(){
 
 		if($(this).scrollTop() < screen_height && lockedMenu === true){
 			$('#main-menu').css('position', 'relative');
-			$('#content').css({'margin-top': '0'});
+			$('#content').css({'margin-top': preexistent_margin});
 			console.log("scrollTop < 150");
 			lockedMenu = false;
 			console.log(lockedMenu);
