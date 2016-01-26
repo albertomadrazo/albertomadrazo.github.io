@@ -145,7 +145,7 @@ body{
 }
 
 #main-menu a{
-    color: #333;
+    color: #666;
     font-weight: bold;
 }
 
@@ -285,6 +285,23 @@ h3{
 h4{
     font-weight: bold;
     font-size: 1.5em;
+}
+
+strong{
+    font-weight: bold;
+}
+
+.parrot{
+    line-height: 25px;
+    font-size: 1.2em;
+}
+
+#content a{
+    color: $vivos;
+}
+
+#content a:hover{
+    color: $vivos_hover;
 }
 
 /* =========================================== 
