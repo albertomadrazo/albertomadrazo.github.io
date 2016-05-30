@@ -1,6 +1,15 @@
 ---
 layout: default
 ---
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <p class="parrot">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Hola</strong>, mi nombre es Alberto Madrazo, soy un desarrollador front-end y back-end (principalmente back-end) con <strong><i>PHP, Django/Python y JavaScript</i></strong>, y no le hago el feo a otras tecnolog&iacute;as. <br /><br />
 Me interesa saber c&oacute;mo funcionan las cosas y resolver problemas es mi obsesi&oacute;n. 
@@ -12,6 +21,10 @@ En este sitio tengo algunos <a href="/portafolio">proyectos</a> que he desarroll
 <br />
 Gracias por tu visita y no olvides <a href="/contacto">escribirme.</a>
 </p>
+
+
+<div class="fb-share-button" data-href="https://albertomadrazo.com" data-layout="button" data-mobile-iframe="true"></div>
+
 <script type="text/javascript">
     $(document).ready(function(){
         $('#menu-inicio').css({'border-bottom': '3px solid #FF7A32', 'color': 'black'});
